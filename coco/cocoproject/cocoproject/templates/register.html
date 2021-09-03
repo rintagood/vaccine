@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color:aqua;">
+<center>
+
+<h2 style="color:black; text-align:center;font-size:250%">Registration</h2>
+    <br>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+<form action="register" method="post">
+    {% csrf_token %}
+
+    <input type="text" name="username" placeholder="Enter username"><br>
+        <br>
+     <input type="text" name="first_name" placeholder="Enter first_name"><br>
+        <br>
+     <input type="text" name="last_name" placeholder="Enter last_name"><br>
+        <br>
+
+     <input type="email" name="email" placeholder="Enter emailid"><br>
+        <br>
+     <input type="password" name="password" placeholder="Enter password"><br>
+        <br>
+     <input type="password" name="password1" placeholder="Confirm password"><br>
+        <br>
+     <input type="submit">
+    <br>
+    <br>
+
+
+</form>
+    </center>
+<center>
+{% for msg in messages %}
+{{msg}}
+{% endfor %}
+
+<h5><a href="{% url 'cocoapp:index' %}">Home</a></h5>
+</center>
+</body>
+</html>
